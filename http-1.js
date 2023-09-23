@@ -1,5 +1,8 @@
 var http = require("http");
 
+console.log("started a first task");
+
+// CHECK FILE PATH!!!!!
 const server = http.createServer((req, res) => {
   if (req.url === "/") {
     res.end("Welcome to our page");
@@ -11,9 +14,9 @@ const server = http.createServer((req, res) => {
     <h1>Oops!</h1>
     <p>We can't seem to find the page you looking for</p>
     <a href="/">back home page</a>
-  `)
+  `);
 });
 
 server.listen(8080, () => {
-  //   console.log("Server listening on port : 5000.....");
+  console.log("Server listening on port : 5000.....");
 });

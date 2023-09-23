@@ -1,9 +1,20 @@
-// manual approach (create package.json in the root, create properties ect)
-// npm init (step by step, press enter to skip)
-// npm init -y (everythinq default)
+const { readFile } = require("fs");
 
-const _ = require("lodash");
+console.log("srarted a first task");
 
-const items = [1, [2, [3, [4]]]];
-const newItems = _.flattenDeep(items);
-console.log(newItems)
+readFile("./content/first.txt", "utf8", (err, result) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  const first = result;
+  readFile("./content/second.txt", "utf8", (err, result) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    const second = result;
+    console.log('completed first task')
+  });
+});
+console.log("starting next task");
